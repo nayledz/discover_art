@@ -1,0 +1,175 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block page_content %}
+
+
+    <!-- fruit section -->
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+
+
+.topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #2196F3;
+  color: white;
+}
+
+.topnav .search-container {
+  float: right;
+}
+
+.topnav input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+
+.topnav .search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <div class="search-container">
+    <form action="{% url 'search results' %}" method="get">
+      <input type="text" placeholder="Search.." name="q">
+      <button type="submit"><i class="fa fa-search"></i></button>
+        {% csrf_token %}
+    </form>
+  </div>
+</div>
+
+<div style="padding-left:16px">
+</div>
+
+</body>
+</html>
+  </div>
+</div>
+
+        <div class="container-fluid">
+
+    <section class="fruit_section layout_padding">
+        <div class="container">
+            <div class="heading_container">
+                <hr>
+                <h2>
+                    Categories
+                </h2>
+            </div>
+        </div>
+
+
+            <div class="fruit_container">
+                <div class="box">
+                    <img src="{% static "images/L.jpg" %}" alt="">
+                    <div class="link_box">
+                        <h5>
+                            Landscapes
+                        </h5>
+                        <a href="{% url 'landscapes' %}">
+                            View All
+                        </a>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="{% static "images/A.jpg" %}" alt="">
+                    <div class="link_box">
+                        <h5>
+                            Abstracts
+                        </h5>
+                        <a href="{% url 'abstracts' %}">
+                            Buy Now
+                        </a>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="{% static "images/P.jpg" %}" alt="">
+                    <div class="link_box">
+                        <h5>
+                            People and Portraits
+                        </h5>
+                        <a href="{% url 'portraits' %}">
+                            Buy Now
+                        </a>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="{% static "images/F.jpg" %}" alt="">
+                    <div class="link_box">
+                        <h5>
+                            Florals and Plants
+                        </h5>
+                        <a href="{% url 'florals' %}">
+                            Buy Now
+                        </a>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="{% static "images/St.jpg" %}" alt="">
+                    <div class="link_box">
+                        <h5>
+                            Still Life
+                        </h5>
+                        <a href="{% url 'still life' %}">
+                            Buy Now
+                        </a>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="{% static "images/An.jpg" %}" alt="">
+                    <div class="link_box">
+                        <h5>
+                            Animals
+                        </h5>
+                        <a href="{% url 'animals' %}">
+                            Buy Now
+                        </a>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="{% static "images/C.jpg" %}" alt="">
+                    <div class="link_box">
+                        <h5>
+                            Architecture and Cities
+                        </h5>
+                        <a href="{% url 'cities' %}">
+                            Buy Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- end fruit section -->
+
+{% endblock %}

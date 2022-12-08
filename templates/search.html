@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block page_content %}
+
+
+  <!-- fruit section -->
+
+  <section class="fruit_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <hr>
+          {% if object_list %}
+        <h2>
+          Paintings found:
+        </h2>
+          {% endif %}
+      </div>
+    </div>
+    <div class="container-fluid">
+
+      <div class="fruit_container">
+      {% if not object_list %}
+              <h2>
+          We are sorry, we did not find paintings with the given name.
+        </h2>
+      {% else %}
+
+          {% for product in object_list %}
+        <div class="box">
+          <img src="{{ product.product_image.url }}" alt="">
+          <div class="link_box">
+            <h5>
+                {{ product.name }}
+            </h5>
+            <a href="{% url 'product details' pk=product.pk %}">
+              Details
+            </a>
+          </div>
+        </div>
+          {% endfor %}
+      {% endif %}
+
+      </div>
+    </div>
+  </section>
+
+  <!-- end fruit section -->
+
+ {% endblock %}

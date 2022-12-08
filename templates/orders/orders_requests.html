@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block page_content %}
+{% if order_requests %}
+    <h3 class="text-center">You have the following order requests:</h3>
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    {% for order in order_requests %}
+    <div class="row"></div>
+        <h5>At {{ order.ordered_date }} you received request from {{ order.customer_first_name }} {{ order.customer_last_name }} to send {{ order.product.name }} to the following address:</h5>
+        <ul>
+        <li>{{ order.street }}</li>
+        <li>{{ order.city }}</li>
+        <li>{{ order.country }}</li>
+        <li>{{ order.zip }}</li>
+        =============================================================================================================================
+        </ul>
+    {% endfor %}
+{% else %}
+        <h1>You don't have order requests</h1>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block page_content %}
+
+    <!-- Start Add Pet Section-->
+    <div class="edit-delete edit-photo">
+        <h2>Add painting</h2>
+
+            <div align="center"><form method="post" enctype="multipart/form-data" >
+              <div class="contact_form-container">
+                <div>
+                    {% csrf_token %}
+                    {{form.as_p}}
+{#                  <div>#}
+{#                    <input type="text" placeholder="Full Name" />#}
+{#                  </div>#}
+{#                  <div>#}
+{#                    <input type="email" placeholder="Email" />#}
+{#                  </div>#}
+{#                  <div>#}
+{#                    <input type="text" placeholder="Phone Number" />#}
+{#                  </div>#}
+{#                  <div>#}
+{#                    <input type="text" class="message_input" placeholder="Message" />#}
+{#                  </div>#}
+{#                  <div>#}
+                    <button type="submit">
+                      Add Painting
+                    </button>
+                  </div>
+                </div>
+            </form>
+            <div>
+    </div>
+
+{% endblock %}

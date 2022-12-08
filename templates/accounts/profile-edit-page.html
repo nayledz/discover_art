@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block page_content %}
+    <div align="center">
+        <div class="layout_padding2-top">
+            <div class="edit-delete">
+                <h2>Edit Profile</h2>
+                <form method="post" action="{% url 'edit account' pk=user.pk %}" enctype="multipart/form-data">
+
+                    {{ form.as_p }}
+                    {% csrf_token %}
+                    <button class="edit-btn" type="submit">Edit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

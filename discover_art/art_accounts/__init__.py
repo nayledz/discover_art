@@ -1,0 +1,1 @@
+default_app_config='discover_art.art_accounts.apps.ArtAccountsConfig'

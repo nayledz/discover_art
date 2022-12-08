@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block page_content %}
+
+  <!-- about section -->
+
+  <section class="about_section layout_padding">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6 px-0">
+          <div class="img-box">
+            <img src="{% static "images/about.jpg" %}" alt="">
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div class="detail-box">
+            <div class="heading_container">
+              <hr>
+              <h2>
+                Our mission for a better art world
+              </h2>
+            </div>
+            <p>
+               At DiscoverArt, we do things a little differently. Our mission is to make art accessible, affordable, and a viable career for artists. We help buyers find pieces that they can’t find anywhere else. We value doing the right thing for our artists and customers and staying true to who we are above all else.
+                When you join DiscoverArt, you join our entire community for a friendlier, fairer world for artists. As well as reaching a global audience, you receive dedicated support at every step of the way.
+                We launched DiscoverArt to challenge the industry to offer a fair and sustainable marketplace for artists, where anyone can discover and buy original art. We’re committed to eliminating the ‘starving artist’ syndrome and believe that affordable art and artist success shouldn’t be mutually exclusive.
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end about section -->
+{% endblock %}

@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block page_content %}
+
+
+  <!-- fruit section -->
+
+  <section class="fruit_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <hr>
+        <h2>
+          My paintings
+        </h2>
+      </div>
+    </div>
+    <div class="container-fluid">
+
+      <div class="fruit_container">
+      {% if my_products == 0 %}
+              <h2>
+          No paintings!
+        </h2>
+      {% else %}
+          {% for product in products %}
+        <div class="box">
+          <img src="{{ product.product_image.url }}" alt="">
+          <div class="link_box">
+            <h5>
+                {{ product.name }}
+            </h5>
+            <a href="{% url 'product details' pk=product.pk %}">
+              Details
+            </a>
+          </div>
+        </div>
+          {% endfor %}
+      {% endif %}
+{#        <div class="box">#}
+{#          <img src="{% static "images/A.jpg" %}" alt="">#}
+{#          <div class="link_box">#}
+{#            <h5>#}
+{#              Abstracts#}
+{#            </h5>#}
+{#            <a href="">#}
+{#              Buy Now#}
+{#            </a>#}
+{#          </div>#}
+{#        </div>#}
+{#        <div class="box">#}
+{#          <img src="{% static "images/P.jpg" %}" alt="">#}
+{#          <div class="link_box">#}
+{#            <h5>#}
+{#              People and Portraits#}
+{#            </h5>#}
+{#            <a href="">#}
+{#              Buy Now#}
+{#            </a>#}
+{#          </div>#}
+{#        </div>#}
+{#        <div class="box">#}
+{#          <img src="{% static "images/F.jpg" %}" alt="">#}
+{#          <div class="link_box">#}
+{#            <h5>#}
+{#              Florals and Plants#}
+{#            </h5>#}
+{#            <a href="">#}
+{#              Buy Now#}
+{#            </a>#}
+{#          </div>#}
+{#        </div>#}
+{#        <div class="box">#}
+{#          <img src="{% static "images/St.jpg" %}" alt="">#}
+{#          <div class="link_box">#}
+{#            <h5>#}
+{#              Still Life#}
+{#            </h5>#}
+{#            <a href="">#}
+{#              Buy Now#}
+{#            </a>#}
+{#          </div>#}
+{#        </div>#}
+{#        <div class="box">#}
+{#          <img src="{% static "images/An.jpg" %}" alt="">#}
+{#          <div class="link_box">#}
+{#            <h5>#}
+{#              Animals#}
+{#            </h5>#}
+{#            <a href="">#}
+{#              Buy Now#}
+{#            </a>#}
+{#          </div>#}
+{#        </div>#}
+{#                  <div class="box">#}
+{#          <img src="{% static "images/C.jpg" %}" alt="">#}
+{#          <div class="link_box">#}
+{#            <h5>#}
+{#              Architecture and Cities#}
+{#            </h5>#}
+{#            <a href="">#}
+{#              Buy Now#}
+{#            </a>#}
+{#          </div>#}
+{#        </div>#}
+      </div>
+    </div>
+  </section>
+
+  <!-- end fruit section -->
+
+ {% endblock %}

@@ -1,0 +1,161 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block page_content %}
+
+  <!-- shop section -->
+
+  <section class="shop_section layout_padding">
+    <div class="container">
+      <div class="box">
+        <div class="detail-box">
+          <h2>
+            Discover Art
+          </h2>
+          <p>
+            Shop original art from independent artists around the world.
+          </p>
+        </div>
+        <div class="img-box">
+          <img src="{% static "images/pngwing.png" %}" alt="">
+        </div>
+        <div class="btn-box">
+          <a href="{% url 'categories' %}">
+            Buy Now
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end shop section -->
+
+  <!-- about section -->
+
+  <section class="about_section">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6 px-0">
+          <div class="img-box">
+            <img src="{% static "images/4.jpg" %}" alt="">
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div class="detail-box">
+            <div class="heading_container">
+              <hr>
+              <h2>
+                About Us
+              </h2>
+            </div>
+            <p>
+              On a mission to make art sustainable, accessible, affordable, and a joy to discover, while supporting artists to make a living doing what they love.
+            </p>
+            <a href="{% url 'about us' %}">
+              Read More
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end about section -->
+
+  <!-- fruit section -->
+
+  <section class="fruit_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <hr>
+        <h2>
+          Categories
+        </h2>
+      </div>
+    </div>
+    <div class="container-fluid">
+
+      <div class="fruit_container">
+        <div class="box">
+          <img src="{% static "images/L.jpg" %}" alt="">
+          <div class="link_box">
+            <h5>
+              Landscapes
+            </h5>
+            <a href="{% url 'landscapes' %}">
+              Buy Now
+            </a>
+          </div>
+        </div>
+        <div class="box">
+          <img src="{% static "images/A.jpg" %}" alt="">
+          <div class="link_box">
+            <h5>
+              Abstracts
+            </h5>
+            <a href="{% url 'abstracts' %}">
+              Buy Now
+            </a>
+          </div>
+        </div>
+        <div class="box">
+          <img src="{% static "images/P.jpg" %}" alt="">
+          <div class="link_box">
+            <h5>
+              People and Portraits
+            </h5>
+            <a href="{% url 'portraits' %}">
+              Buy Now
+            </a>
+          </div>
+        </div>
+        <div class="box">
+          <img src="{% static "images/F.jpg" %}" alt="">
+          <div class="link_box">
+            <h5>
+              Florals and Plants
+            </h5>
+            <a href="{% url 'florals' %}">
+              Buy Now
+            </a>
+          </div>
+        </div>
+        <div class="box">
+          <img src="{% static "images/St.jpg" %}" alt="">
+          <div class="link_box">
+            <h5>
+              Still Life
+            </h5>
+            <a href="{% url 'still life' %}">
+              Buy Now
+            </a>
+          </div>
+        </div>
+        <div class="box">
+          <img src="{% static "images/An.jpg" %}" alt="">
+          <div class="link_box">
+            <h5>
+              Animals
+            </h5>
+            <a href="{% url 'animals' %}">
+              Buy Now
+            </a>
+          </div>
+        </div>
+                  <div class="box">
+          <img src="{% static "images/C.jpg" %}" alt="">
+          <div class="link_box">
+            <h5>
+              Architecture and Cities
+            </h5>
+            <a href="{% url 'cities' %}">
+              Buy Now
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<!-- end contact section -->
+{% endblock %}

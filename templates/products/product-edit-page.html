@@ -1,0 +1,13 @@
+
+{% extends 'base.html' %}
+{% block page_content %}
+    <div align="center"><div class="edit-delete edit-photo">
+        <h2>Edit Painting</h2>
+        <form method="post" action="{% url 'product edit' pk=product.pk %}">
+            {{ form.as_p }}
+            <button class="edit-btn" type="submit">Edit </button>
+            {% csrf_token %}
+        </form>
+    </div>
+    </div>
+{% endblock %}
