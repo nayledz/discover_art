@@ -1,7 +1,10 @@
 from django.contrib import auth
 from django.contrib.auth import get_user_model
+from django.db.models import Q
 from django.test import TestCase, Client
 from django.urls import reverse
+
+from discover_art.art_products.models import Product
 
 UserModel = get_user_model()
 
@@ -25,18 +28,6 @@ class ProductTests(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'products.html')
 
-    # def test_logged_in_uses_correct_template(self):
-    #     login = self.client.login(email='some@email.com', password='password')
-    #     user = auth.get_user(self.client)
-    #     response = self.client.get(reverse('product create'))
-    #
-    #     # Check our user is logged in
-    #     self.assertEqual(int(self.client.session['user_id']), user.pk)
-    #     # Check that we got a response "success"
-    #     self.assertEqual(response.status_code, 200)
-    #
-    #     # Check we used correct template
-    #     self.assertTemplateUsed(response, 'products/product-add-page.html')
 
 
 

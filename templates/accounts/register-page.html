@@ -1,25 +1,32 @@
 {% extends 'base.html' %}
+{% load crispy_forms_filters %}
 
 {% load placeholders %}
 
 {% block page_content %}
     <div class="login-register-div">
     <div class="login-register-box">
-
+        <div class="offset-lg-2 col-md-10 offset-md-1">
+          <div class="heading_container">
+            <hr>
+            <h2>
+              Register
+            </h2>
+          </div>
+        </div>
     <div align="center">
         <form method="post" action="{% url 'sign up' %}">
             <div class="contact_form-container">
                 <div>
-                    {{ form.email|placeholder:'Email: ' }}
-                    {{ form.password1|placeholder:'Password: ' }}
-                    {{ form.password2|placeholder:'Repeat password: ' }}
-                    {% if form.errors %}
-                        <ul>
-                            {% for field in form %}
-                                <li>{{ field.errors }}</li>
-                            {% endfor %}
-                        </ul>
-                    {% endif %}
+                    {{ form|crispy }}
+                    {#                    {{ form.email|placeholder:'Email: ' }}#}
+                    {#                    {{ form.password1|placeholder:'Password: ' }}#}
+                    {#                    {{ form.password2|placeholder:'Repeat password: ' }}#}
+                    {#                    {% if form.errors %}#}
+                    {#                        <ul>#}
+                    {#                            {{form.errors}}#}
+                    {#                        </ul>#}
+                    {#                    {% endif %}#}
                     {% csrf_token %}
                     <button type="submit">
                         Register
@@ -30,10 +37,13 @@
         </form>
         <div>
         </div>
-        <div class="second-option">
+        <div align="center">
+            <div class="second-option">
 
-            <p>Have an account? <a href="{% url 'log in' %}">Log in</a></p>
-        </div>
+                <p>Have an account? <a href="{% url 'log in' %}">Log in</a></p>
+                <div>
+            </div>
+
     </div>
 
 

@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load crispy_forms_filters %}
 {% block page_content %}
 
     <!-- Start Add Pet Section-->
@@ -9,7 +10,7 @@
               <div class="contact_form-container">
                 <div>
                     {% csrf_token %}
-                    {{form.as_p}}
+                    {{form|crispy}}
 {#                  <div>#}
 {#                    <input type="text" placeholder="Full Name" />#}
 {#                  </div>#}

@@ -28,7 +28,7 @@
                 <h1>{{ product.name }}</h1>
                 <!-- car model -->
 {#                <p><span class="description">by {{ owner_name }}</span></p>#}
-                <p><span class="description">Category: {{ product.category }}</span></p>
+                <p><span class="description">Category: {{ product.get_category_display }}</span></p>
                 <p><span class="description">Description: {{ product.description }}</span></p>
                 <p><span class="description">Size: {{ product.size }}</span></p>
                 <p><span class="description">Materials used: {{ product.used_materials }}</span></p>

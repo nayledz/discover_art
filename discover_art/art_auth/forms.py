@@ -14,10 +14,14 @@ class SignUpForm(UserCreationForm):
         fields = ('email', 'password1', 'password2')
         widgets = {
             'email': forms.EmailInput(attrs={'placeholder': 'Enter your email*'}),
+            'password1': forms.PasswordInput(attrs={'placeholder': 'Enter your password*'}),
+            'password2': forms.PasswordInput(attrs={'placeholder': 'Repeat your password*'}),
         }
 
-
-
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['password1'].help_text = None
+        self.fields['password2'].help_text = None
 
 class LogInForm(AuthenticationForm):
     user = None

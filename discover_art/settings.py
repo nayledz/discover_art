@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'discover_art.art_accounts',
     'discover_art.art_products',
     'discover_art.art_contact',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [

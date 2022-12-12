@@ -1,13 +1,15 @@
 {% extends 'base.html' %}
+{% load crispy_forms_filters %}
 
 {% load placeholders %}
 
 {% block page_content %}
     <div class="login-register-div">
-        <div class="login-register-box">
-        <h3>Enter information for your order</h3>
-            <form method="post">
-              <div class="contact_form-container">
+    <div class="login-register-box">
+    <div align="center"><h3>Enter information for your order:</h3>
+    <div align="center">
+        <form method="post">
+            <div class="contact_form-container">
                 <div>
                     {{ form.customer_first_name|placeholder:'First Name: ' }}
                     {{ form.customer_last_name|placeholder:'Last Name: ' }}
@@ -17,13 +19,14 @@
                     {{ form.zip|placeholder:'Postal code: ' }}
                     {% csrf_token %}
                     <button type="submit">
-                      Order
+                        Order
                     </button>
 
                 </div>
-              </div>
-            </form>
-         </div>
+            </div>
+        </form>
+        <div>
+        </div>
 
     </div>
 

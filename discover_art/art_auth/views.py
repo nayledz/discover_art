@@ -14,7 +14,13 @@ class UserRegisterView(views.CreateView):
     model = UserModel
     form_class = SignUpForm
     template_name = 'accounts/register-page.html'
-    success_url = reverse_lazy('log in')
+    success_url = reverse_lazy('index')
+
+    def form_valid(self, form):
+        response = super().form_valid(form)
+        user = form.save()
+        login(self.request, user, backend='django.contrib.auth.backends.ModelBackend')
+        return response
 
 
 class UserLoginView(LoginView):
